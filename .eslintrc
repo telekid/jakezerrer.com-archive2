@@ -1,0 +1,16 @@
+---
+  env:
+    browser: true
+    node: true
+    es6: true
+  parserOptions:
+    sourceType: "module"
+    ecmaFeatures:
+      experimentalObjectRestSpread: true
+  extends: "airbnb"
+  rules:
+    no-warning-comments: "warn"
+    max-len: "off"
+    react/jsx-filename-extension: "off"
+    # deprecated rule; disabling until removed from react
+    react/require-extension: "off"
