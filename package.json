@@ -1,0 +1,41 @@
+{
+  "name": "jakezerrer.com",
+  "version": "0.0.0",
+  "description": "Jake Zerrer's personal home page",
+  "scripts": {
+    "dev": "node_modules/webpack-dev-server/bin/webpack-dev-server.js --env dev --no-info",
+    "build": "node_modules/webpack/bin/webpack.js --env prod"
+  },
+  "author": "Jake Zerrer <him@jakezerrer.com>",
+  "license": "MIT",
+  "dependencies": {
+    "autoprefixer": "^6.4.1",
+    "babel-core": "^6.14.0",
+    "babel-loader": "^6.2.5",
+    "babel-plugin-ramda": "^1.1.6",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-react": "^6.11.1",
+    "eslint": "^3.5.0",
+    "eslint-config-airbnb": "^11.0.0",
+    "eslint-loader": "^1.5.0",
+    "eslint-plugin-import": "^1.14.0",
+    "eslint-plugin-jsx-a11y": "^2.2.1",
+    "eslint-plugin-react": "^6.2.0",
+    "extract-text-webpack-plugin": "^2.0.0-beta.4",
+    "file-loader": "^0.9.0",
+    "html-webpack-plugin": "^2.22.0",
+    "postcss-loader": "^0.13.0",
+    "postcss-nesting": "^2.3.1",
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1",
+    "style-loader": "^0.13.1",
+    "stylelint": "^7.2.0",
+    "system-font-css": "^1.1.0",
+    "webpack": "^2.1.0-beta.22",
+    "webpack-dev-server": "^2.1.0-beta.4"
+  },
+  "devDependencies": {
+    "css-loader": "^0.25.0",
+    "stylelint-config-standard": "^13.0.0"
+  }
+}
