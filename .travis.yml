@@ -1,4 +1,18 @@
 language: node_js
 node_js:
-  - "6.1.x"
+  - "6"
 script: npm run build
+deploy:
+  provider: s3
+  access_key_id: AKIAILVUUXKCZL3SPC3Q
+  secret_access_key:
+    secure: grJ8v+P5ozhBZepzPKftOuf8R7l6SgGJD02CTHlnq6dXOwktbUmDjXC8hjUtiPCeTB/lp5cFoGCk8QYp0fLP6A6Ctfs5jAk8XmzmTwBojdmK1K8jE82Nkh/oYRbNrhSAcAoJJ4rCvjee/af3aBd0oHuOhuhurnDRQ2pYCvK9M6c1z7lwvQjg6wpwyRnQJ/IsmPNGIs4rhd4ut8Hc6mFHcRyid8/F57mJ8nToFl8TAXWDyHxGgQo+mRV3/U9ENV4N+XdQNR6BknDQ1dZC4rpMoFDVXCNyFngB20zY2DCmU6bHXbppDHNVNCOR2geiqPOgZJrM3fzgTW1Rg/lLmJZbymPARoQL452cG0tYO0Xkhn5jjdyUW6/vMFJZT4p/SDeTrteQ7vrJYWDSM+GlH3VK0tWMSEDjeoMbgHgzCwWoP/EINi+92mIZ831uroagy+Jdn81CFg8sjX106coE9SbXJ/L/aGTX3sAv4OerY7S0O5cI8U6m8aq+tKYn+6w3E3EJQEroWRNG0j9M8KGHfYBT8T4aKISjNE/CkMUhoX4vxWtHiKauw8iSUK4f5m27Eq80J0VnCjdHMacxdbcLFZXy5NDm7cH4NVCxxTZuGC2qfMlwhQHup4ShmIhox5t2iQqrkL6bKQiDZv+OzhtYa90kOeJ17khJH+GEK5yNd2f25p8=
+  bucket: jakezerrer.com
+  skip_cleanup: true
+  local-dir: dist
+  acl: public_read
+  on:
+    repo: telekid/jakezerrer.com
+    branch:
+      - master
+      - travis
