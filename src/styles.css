@@ -1,0 +1,23 @@
+@import "system-font-css/system-font.css";
+
+:global(:root) {
+    /* Set our root font-size so that 1rem = 10px */
+    font-size: 10px;
+    font-family: system;
+}
+
+:global(body) {
+    margin: 0;
+}
+
+:global(html), :global(body) {
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
