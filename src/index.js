@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import 'document-register-element';
+
 import styles from './styles.css';
 
 import Home from './components/Home';
