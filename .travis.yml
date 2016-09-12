@@ -14,5 +14,4 @@ deploy:
   on:
     repo: telekid/jakezerrer.com
     branch:
-      - master
-      - travis
+      - deploy
