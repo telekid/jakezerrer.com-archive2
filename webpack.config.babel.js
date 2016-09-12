@@ -83,7 +83,9 @@ export default function (env) {
     plugins: (() => {
       const plugins = [
         new ExtractTextPlugin('style.css'),
-        new HtmlWebpackPlugin(),
+        new HtmlWebpackPlugin({
+          title: 'Jake Zerrer',
+        }),
       ];
 
       plugins.push(new webpack.DefinePlugin({
