@@ -1,10 +1,17 @@
 .wrap {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box {
+    background-position: center;
     padding: 5rem;
     border-radius: 4px;
     color: white;
     background-image: url("./background.jpg");
     background-size: cover;
-    background-position: center;
 }
 
 .name {
