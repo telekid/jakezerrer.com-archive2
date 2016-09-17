@@ -61,7 +61,10 @@ export default function (env) {
           exclude: /node_modules/ },
 
         { test: /\.css$/,
-          loaders: ['style', 'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]', 'postcss'],
+          loader: ExtractTextPlugin.extract({
+            fallbackLoader: 'style',
+            loader: ['css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]', 'postcss'],
+          }),
           exclude: /node_modules/ },
       ],
     },
@@ -86,9 +89,11 @@ export default function (env) {
         new ExtractTextPlugin('style.css'),
         new HtmlWebpackPlugin({
           template,
+          inject: false,
           appMountId: 'app',
           title: 'Jake Zerrer',
           mobile: true,
+          hash: true,
         }),
       ];
 
