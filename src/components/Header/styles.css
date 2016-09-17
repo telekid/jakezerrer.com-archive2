@@ -1,0 +1,32 @@
+.header {
+    width: 100%;
+    margin: 0;
+    font-size: 1.4rem;
+    background: #fafafa;
+    border-bottom: 1px solid #eee;
+}
+
+.list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.listItem {
+    margin: 0;
+    padding: 1.4rem;
+
+    & a {
+        color: #999;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.listItem.active a {
+    color: #333;
+}
