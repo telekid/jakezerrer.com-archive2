@@ -88,6 +88,7 @@ export default function (env) {
           template,
           appMountId: 'app',
           title: 'Jake Zerrer',
+          mobile: true,
         }),
       ];
 
