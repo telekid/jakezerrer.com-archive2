@@ -93,7 +93,7 @@ export default function (env) {
           appMountId: 'app',
           title: 'Jake Zerrer',
           mobile: true,
-          hash: true,
+          hash: env === modes.PRODUCTION,
         }),
       ];
 
