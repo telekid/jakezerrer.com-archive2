@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { UIView } from 'ui-router-react';
 
 import styles from './styles.css';
 
-import Home from './components/Home';
+import './routes';
 
 ReactDOM.render(
   <div className={styles.container}>
-    <Home />
+    <UIView />
   </div>,
   document.getElementById('app')
 );
