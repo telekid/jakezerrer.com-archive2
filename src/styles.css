@@ -3,7 +3,7 @@
 :global(:root) {
     /* Set our root font-size so that 1rem = 10px */
     font-size: 10px;
-    font-family: system;
+    font-family: system, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 :global(body) {
