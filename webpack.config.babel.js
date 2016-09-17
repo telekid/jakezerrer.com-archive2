@@ -5,6 +5,7 @@ import path from 'path';
 import stylelint from 'stylelint';
 import nesting from 'postcss-nesting';
 import autoprefixer from 'autoprefixer';
+import template from 'html-webpack-template';
 
 const modes = {
   DEVELOPMENT: 'dev',
@@ -84,6 +85,8 @@ export default function (env) {
       const plugins = [
         new ExtractTextPlugin('style.css'),
         new HtmlWebpackPlugin({
+          template,
+          appMountId: 'app',
           title: 'Jake Zerrer',
         }),
       ];
