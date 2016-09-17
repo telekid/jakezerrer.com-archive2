@@ -110,5 +110,9 @@ export default function (env) {
 
       return plugins;
     })(),
+
+    devServer: {
+      historyApiFallback: true,
+    },
   };
 }
