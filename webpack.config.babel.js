@@ -53,7 +53,7 @@ export default function (env) {
           exclude: /node_modules/ },
       ],
       loaders: [
-        { test: /\.jpg$/,
+        { test: /\.(jpg|png)$/,
           loader: 'file',
           exclude: /node_modules/ },
 
