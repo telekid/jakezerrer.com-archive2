@@ -4,7 +4,9 @@
   "description": "Jake Zerrer's personal home page",
   "scripts": {
     "dev": "node_modules/webpack-dev-server/bin/webpack-dev-server.js --env dev --no-info",
-    "build": "node_modules/webpack/bin/webpack.js --env prod"
+    "build": "node_modules/webpack/bin/webpack.js --env prod",
+    "reactcards": "node_modules/reactcards/dist/server.js -p 8081 -e ./src/reactcards.js"
+
   },
   "author": "Jake Zerrer <him@jakezerrer.com>",
   "license": "MIT",
@@ -29,6 +31,7 @@
     "postcss-nesting": "^2.3.1",
     "react": "^15.3.1",
     "react-dom": "^15.3.1",
+    "reactcards": "^0.4.0",
     "style-loader": "^0.13.1",
     "stylelint": "^7.2.0",
     "system-font-css": "^1.1.0",
