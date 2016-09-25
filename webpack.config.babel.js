@@ -38,6 +38,7 @@ export default function (env) {
     output: {
       filename: '[name].js',
       path: path.resolve('./dist'),
+      publicPath: '/'
     },
 
     eslint: {
