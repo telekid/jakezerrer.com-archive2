@@ -41,46 +41,58 @@ export default function (env) {
       publicPath: '/'
     },
 
-    eslint: {
-      configFile: path.resolve('./.eslintrc'),
-      emitWarning: env === modes.DEVELOPMENT,
-    },
-
     module: {
-      preLoaders: [
-        { test: /\.js$/,
-          loader: 'eslint-loader?',
-          exclude: /node_modules/ },
-      ],
-      loaders: [
-        { test: /\.(jpg|png)$/,
-          loader: 'file',
-          exclude: /node_modules/ },
-
-        { test: /\.js$/,
-          loader: 'babel',
-          exclude: /node_modules/ },
-
-        { test: /\.css$/,
-          loader: ExtractTextPlugin.extract({
-            fallbackLoader: 'style',
-            loader: ['css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]', 'postcss'],
-          }),
-          exclude: /node_modules/ },
+      rules: [
+        // { test: /\.js$/,
+        //   enforce: 'pre',
+        //   loader: 'eslint',
+        //   options: {
+        //     configFile: path.resolve('./.eslintrc'),
+        //     emitWarning: env === modes.DEVELOPMENT,
+        //   },
+        //   exclude: /node_modules/ },
+        {
+          test: /\.(jpg|png)$/,
+          exclude: /node_modules/,
+          use: [
+            {
+              loader: 'file',
+            }
+          ],
+        },
+        {
+          test: /\.js$/,
+          exclude: /node_modules/,
+          use: [
+            {
+              loader: 'babel',
+            },
+          ],
+        },
+        {
+          test: /\.css$/,
+          exclude: /node_modules/,
+          use: [
+            {
+              loader: 'css',
+              options: {
+                modules: true,
+                importLoaders: 1,
+                localIdentName: '[name]__[local]___[hash:base64:5]',
+              },
+            },
+            {
+              loader: 'postcss',
+            },
+          ],
+        },
       ],
     },
-
-    postcss: (() => {
-      const postcssActions = [nesting, autoprefixer];
-
-      if (env === modes.PRODUCTION) {
-        postcssActions.push(stylelint);
-      }
-      return postcssActions;
-    })(),
 
     resolve: {
-      modulesDirectories: ['node_modules'],
+      modules: [
+        'node_modules',
+      ],
     },
 
     devtool: env === modes.DEVELOPMENT ? 'eval-source-map' : 'hidden-source-map',
@@ -88,6 +100,18 @@ export default function (env) {
     plugins: (() => {
       const plugins = [
         new ExtractTextPlugin('style.css'),
+        new webpack.LoaderOptionsPlugin({
+          options: {
+            postcss: (() => {
+              const postcssActions = [nesting, autoprefixer];
+
+              if (env === modes.PRODUCTION) {
+                postcssActions.push(stylelint);
+              }
+              return postcssActions;
+            })(),
+          }
+        }),
         new HtmlWebpackPlugin({
           template,
           inject: false,
