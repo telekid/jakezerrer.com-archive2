@@ -1,13 +1,12 @@
 import React from 'react';
 
-export default function iPad({width = 600, backgroundImage}) {
-  const
-    iPadWidth = 305.7,
-    iPadHeight = 220.6,
-    aspect = iPadHeight / iPadWidth;
+export default function iPad({width = 600, backgroundImage, className}) {
+  const iPadWidth = 305.7;
+  const iPadHeight = 220.6;
+  const aspect = iPadHeight / iPadWidth;
 
   return (
-    <svg width={width} height={width * aspect} viewBox={"0 0 " + iPadWidth + " " + iPadHeight}>
+    <svg width={width} height={width * aspect} viewBox={`0 0 ${iPadWidth} ${iPadHeight}`} className={className}>
       <filter id="light">
         <feSpecularLighting in="SourceGraphic" result="light" lightingColor="white">
           <feSpotLight pointsAtX={iPadWidth * 0.1} pointsAtY={iPadHeight * 0.1} pointsAtZ="0" x={iPadWidth * 0.8} y={iPadHeight * 0.8} z="100" />
@@ -18,11 +17,11 @@ export default function iPad({width = 600, backgroundImage}) {
         <g>
           <rect width={iPadWidth} height={iPadHeight} fill="rgb(73, 74, 79)" rx="11" ry="11" />
           <rect width={iPadWidth - 2} height={iPadHeight - 2} x="1" y="1" rx="10" ry="10" fill="rgb(8, 8, 9)" />
-          <rect width={iPadWidth - 21 * 2} height={iPadHeight - 11.2 * 2} x="21" y="11.2" rx="1" ry="1" fill="hsl(0, 0%, 15%)" />
-          <rect width={iPadWidth - 21.8 * 2} height={iPadHeight - 12 * 2} x="21.8" y="12.0" fill="black" />
+          <rect width={iPadWidth - (21 * 2)} height={iPadHeight - (11.2 * 2)} x="21" y="11.2" rx="1" ry="1" fill="hsl(0, 0%, 15%)" />
+          <rect width={iPadWidth - (21.8 * 2)} height={iPadHeight - (12 * 2)} x="21.8" y="12.0" fill="black" />
           {
             backgroundImage ?
-              <image href={backgroundImage} width={iPadWidth - 21.8 * 2} height={iPadHeight - 12 * 2} x="21.8" y="12.0" /> :
+              <image href={backgroundImage} width={iPadWidth - (21.8 * 2)} height={iPadHeight - (12 * 2)} x="21.8" y="12.0" /> :
               null
           }
         </g>
